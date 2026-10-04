@@ -4472,102 +4472,45 @@ button.primary,
 }
 
 
-/* =========================================================
-   FINAL LOCK — LUXURY WINE + IVORY
-   Do not override this theme with the older dark stylesheet.
-   ========================================================= */
-
-:root {
-  --bg: #f7f1ed !important;
-  --sidebar: #4a1026 !important;
-  --card: #fffdfb !important;
-  --card2: #fbf4f1 !important;
-  --gold: #c99a4a !important;
-  --gold-light: #e2bd78 !important;
-  --cream: #fffaf6 !important;
-  --text: #351522 !important;
-  --muted: #765f68 !important;
-  --pink: #a51445 !important;
-  --pink-dark: #780d32 !important;
-  --border: #eadbd5 !important;
-}
-
-html, body {
-  background: #f7f1ed !important;
-  color: #351522 !important;
-}
-
-body {
-  background:
-    radial-gradient(circle at 88% 4%, rgba(201,154,74,.10), transparent 24%),
-    linear-gradient(135deg, #faf5f2 0%, #f5eeea 100%) !important;
-}
-
-/* Keep dashboard hero photographic, but in the Luxury Wine palette. */
-.hero {
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(74,16,38,.96) 0%,
-      rgba(89,19,48,.88) 46%,
-      rgba(89,19,48,.42) 74%,
-      rgba(89,19,48,.12) 100%
-    ),
-    url("hero.png") !important;
-  background-size: cover !important;
-  background-position: center right !important;
-  background-repeat: no-repeat !important;
-  border: 1px solid #e2c7cf !important;
-}
-
-.hero h1 { color: #fffaf6 !important; }
-.hero h1 span { color: #f5dfe5 !important; }
-.hero p { color: #f1dfe4 !important; }
-.hero-branch {
-  color: #f0c77c !important;
-}
-
-/* Login: use the existing hero.png, so there is no missing login.png. */
-.login-image-panel {
-  background-image: url("hero.png") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  min-height: 650px !important;
-}
-
-.login-image-overlay {
-  background:
-    linear-gradient(135deg, rgba(74,16,38,.18), rgba(74,16,38,.08)),
-    linear-gradient(180deg, rgba(74,16,38,.02), rgba(74,16,38,.28)) !important;
-}
-
-.login-image-copy {
-  color: #fffaf6 !important;
-}
-
-.login-image-copy small {
-  color: #f0c77c !important;
-}
-
-/* Light login panel */
-.login-screen {
-  background:
-    radial-gradient(circle at 18% 18%, rgba(165,20,69,.10), transparent 30%),
-    radial-gradient(circle at 82% 78%, rgba(201,154,74,.10), transparent 28%),
-    #f7f1ed !important;
-}
-
-.login-card {
+/* Custom Event typing field — only */
+.custom-event-type {
+  margin-top: 10px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  min-height: 50px !important;
+  padding: 12px 14px !important;
+  border: 1px solid #eadbd5 !important;
+  border-radius: 12px !important;
   background: #fffdfb !important;
-  border-color: #eadbd5 !important;
-  box-shadow: 0 25px 70px rgba(74,16,38,.14) !important;
+  color: #351522 !important;
+  font-family: inherit !important;
+  font-size: 15px !important;
+  outline: none !important;
 }
 
-/* Remove location UI even if an older HTML fragment survives. */
-.sidebar-location,
-.top-location,
-.map-card,
-.booking-map {
-  display: none !important;
+.custom-event-type::placeholder {
+  color: #9b8790 !important;
+}
+
+.custom-event-type:focus {
+  border-color: #c99a4a !important;
+  box-shadow: 0 0 0 3px rgba(201,154,74,.12) !important;
+}
+
+
+/* =========================================================
+   SELECT TIME DATE VISIBILITY — ONLY
+   Keeps 04 Oct 2026 clearly visible.
+========================================================= */
+
+.availability-header h2 {
+  color: #4b1234 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-shadow: none !important;
+}
+
+.availability-header .section-label {
+  color: #a56b1f !important;
+  opacity: 1 !important;
 }
