@@ -4472,37 +4472,15 @@ button.primary,
 }
 
 
-/* Custom Event typing field — only */
-.custom-event-type {
-  margin-top: 10px !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  min-height: 50px !important;
-  padding: 12px 14px !important;
-  border: 1px solid #eadbd5 !important;
-  border-radius: 12px !important;
-  background: #fffdfb !important;
-  color: #351522 !important;
-  font-family: inherit !important;
-  font-size: 15px !important;
-  outline: none !important;
+/* FINAL: location UI must remain removed */
+.sidebar-location,
+.top-location,
+.map-card,
+.booking-map {
+  display: none !important;
 }
 
-.custom-event-type::placeholder {
-  color: #9b8790 !important;
-}
-
-.custom-event-type:focus {
-  border-color: #c99a4a !important;
-  box-shadow: 0 0 0 3px rgba(201,154,74,.12) !important;
-}
-
-
-/* =========================================================
-   SELECT TIME DATE VISIBILITY — ONLY
-   Keeps 04 Oct 2026 clearly visible.
-========================================================= */
-
+/* FINAL: SELECT TIME date visibility */
 .availability-header h2 {
   color: #4b1234 !important;
   opacity: 1 !important;
@@ -4513,4 +4491,39 @@ button.primary,
 .availability-header .section-label {
   color: #a56b1f !important;
   opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* FINAL: dashboard hero image visibility */
+.hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(77, 5, 31, .98) 0%,
+      rgba(86, 8, 35, .93) 46%,
+      rgba(86, 8, 35, .48) 72%,
+      rgba(86, 8, 35, .18) 100%
+    ),
+    url("hero.png") !important;
+  background-size: cover !important;
+  background-position: center right !important;
+  background-repeat: no-repeat !important;
+}
+
+.hero::after {
+  z-index: 1;
+}
+
+.hero-content,
+.hero-message {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-branch {
+  color: #f0c77c !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 18px !important;
+  font-weight: 600;
+  margin: 5px 0 4px !important;
 }
