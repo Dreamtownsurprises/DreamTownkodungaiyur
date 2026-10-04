@@ -3963,3 +3963,17 @@ nav button.active::before {
   -webkit-box-shadow: 0 0 0 1000px #351b18 inset !important;
   box-shadow: 0 0 0 1000px #351b18 inset !important;
 }
+
+
+/* FINAL INPUT VISIBILITY OVERRIDE */
+#login input, #signupPanel input {
+  color: #4a2634 !important;
+  -webkit-text-fill-color: #4a2634 !important;
+  caret-color: #b85f78 !important;
+  opacity: 1 !important;
+}
+#login input::placeholder, #signupPanel input::placeholder {
+  color: #9b7f89 !important;
+  -webkit-text-fill-color: #9b7f89 !important;
+  opacity: 1 !important;
+}
