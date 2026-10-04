@@ -1552,10 +1552,6 @@ function openModal(
 
   $("type").value =
     "Anniversary Surprise";
-  if ($("customEventName")) {
-    $("customEventName").value = "";
-  }
-  updateCustomEventUI();
 
   $("packageCost").value = "";
   $("customPackageCost").value = "";
@@ -1623,46 +1619,6 @@ $("modal")
 
 
 /* =====================================================
-   CUSTOM EVENT TYPE
-===================================================== */
-
-const STANDARD_EVENT_TYPES = [
-  "Anniversary Surprise",
-  "Birthday Surprise",
-  "Bride to Be",
-  "Proposal Surprise",
-  "Romantic Setup",
-  "Welcome Surprise"
-];
-
-function updateCustomEventUI() {
-  const typeSelect = $("type");
-  const customInput = $("customEventName");
-  if (!typeSelect || !customInput) return;
-
-  const isCustom = typeSelect.value === "Custom Event";
-  customInput.classList.toggle("hidden", !isCustom);
-  customInput.required = isCustom;
-
-  if (!isCustom) {
-    customInput.value = "";
-  }
-}
-
-$("type")?.addEventListener("change", updateCustomEventUI);
-
-function getSelectedEventType() {
-  const typeSelect = $("type");
-  const customInput = $("customEventName");
-
-  if (!typeSelect) return "";
-  if (typeSelect.value === "Custom Event") {
-    return customInput?.value.trim() || "";
-  }
-  return typeSelect.value;
-}
-
-/* =====================================================
    PACKAGE COST
 ===================================================== */
 
@@ -1723,7 +1679,7 @@ async function saveBooking(event) {
 
   const b = {
 
-    type: getSelectedEventType(),
+    type: $("type").value,
     date: $("date").value,
     time: $("time").value,
     endTime: $("endTime").value,
@@ -1739,12 +1695,6 @@ async function saveBooking(event) {
 
   if (!b.date) {
     $("formError").textContent = "Please select a date.";
-    return;
-  }
-
-  if ($("type").value === "Custom Event" && !b.type) {
-    $("formError").textContent = "Please enter what the custom event is.";
-    $("customEventName")?.focus();
     return;
   }
 
@@ -1768,8 +1718,8 @@ async function saveBooking(event) {
       endMinutes += 24 * 60;
     }
 
-    if (endMinutes - startMinutes < 60) {
-      $("formError").textContent = "Minimum booking duration is 1 hour.";
+    if (endMinutes - startMinutes < 30) {
+      $("formError").textContent = "Minimum booking duration is 30 minutes.";
       return;
     }
 
@@ -1874,16 +1824,7 @@ window.editBooking =
 
     $("modalTitle").textContent = "Edit Booking";
     $("editId").value = b.id;
-
-    if (STANDARD_EVENT_TYPES.includes(b.type)) {
-      $("type").value = b.type;
-      $("customEventName").value = "";
-    } else {
-      $("type").value = "Custom Event";
-      $("customEventName").value = b.type || "";
-    }
-    updateCustomEventUI();
-
+    $("type").value = b.type;
     const savedPackageCost = String(b.packageCost ?? "");
     const packageOptions = ["", "999", "1499", "1999"];
 
@@ -2409,7 +2350,7 @@ function renderAvailabilitySlots() {
         currentMinutes += 24 * 60;
       }
 
-      if (currentMinutes < startMinutes + 60) {
+      if (currentMinutes < startMinutes + 30) {
         disabled = true;
       }
 
@@ -2595,11 +2536,11 @@ function checkAvailabilityFromPicker() {
     endMinutes += 24 * 60;
   }
 
-  if (endMinutes - startMinutes < 60) {
+  if (endMinutes - startMinutes < 30) {
 
     if (result) {
       result.className = "availability-status unavailable";
-      result.textContent = "Minimum booking duration is 1 hour.";
+      result.textContent = "Minimum booking duration is 30 minutes.";
     }
 
     return;
@@ -2659,8 +2600,8 @@ window.selectAvailabilityTime = function(time) {
     end += 24 * 60;
   }
 
-  if (end - start < 60) {
-    alert("Minimum booking duration is 1 hour.");
+  if (end - start < 30) {
+    alert("Minimum booking duration is 30 minutes.");
     return;
   }
 
