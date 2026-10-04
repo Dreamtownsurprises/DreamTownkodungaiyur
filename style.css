@@ -3977,3 +3977,32 @@ nav button.active::before {
   -webkit-text-fill-color: #9b7f89 !important;
   opacity: 1 !important;
 }
+
+
+/* FINAL CHROME AUTOFILL FIX — MUST BE LAST */
+#login .login-card .input-wrap input:-webkit-autofill,
+#login .login-card .input-wrap input:-webkit-autofill:hover,
+#login .login-card .input-wrap input:-webkit-autofill:focus,
+#signupPanel .login-card .input-wrap input:-webkit-autofill,
+#signupPanel .login-card .input-wrap input:-webkit-autofill:hover,
+#signupPanel .login-card .input-wrap input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #4a2634 !important;
+  color: #4a2634 !important;
+  background-color: #fffdfc !important;
+  -webkit-box-shadow: 0 0 0 1000px #fffdfc inset !important;
+  box-shadow: 0 0 0 1000px #fffdfc inset !important;
+  caret-color: #b85f78 !important;
+  opacity: 1 !important;
+}
+
+#login .login-card .input-wrap input {
+  background: #fffdfc !important;
+  color: #4a2634 !important;
+  -webkit-text-fill-color: #4a2634 !important;
+  caret-color: #b85f78 !important;
+}
+
+#login .login-card .input-wrap input::placeholder {
+  color: #9b7f89 !important;
+  -webkit-text-fill-color: #9b7f89 !important;
+}
