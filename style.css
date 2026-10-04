@@ -3585,500 +3585,12 @@ nav button.active {
   }
 }
 
+
 /* =========================================================
-   FINAL REFERENCE THEME — DREAM TOWN SURPRISES KODUNGAIYUR
-   Visual target: supplied Booking page screenshot.
-   Theme only. Existing HTML/JS functionality is preserved.
+   FINAL CLEAN LUXURY WINE + IVORY THEME — KODUNGAIYUR
+   This block is intentionally last so it wins over older themes.
+   Functionality/classes are preserved.
 ========================================================= */
-:root {
-  --bg: #f7f1ed !important;
-  --sidebar: #5a0d2b !important;
-  --card: #fffdfb !important;
-  --card2: #fbf4f2 !important;
-  --gold: #a86b16 !important;
-  --gold-light: #c78a35 !important;
-  --cream: #fffaf7 !important;
-  --text: #3b1830 !important;
-  --muted: #786777 !important;
-  --pink: #b30f46 !important;
-  --pink-dark: #8c0b35 !important;
-  --border: #ead8d1 !important;
-  --shadow: 0 18px 45px rgba(78, 30, 48, .10) !important;
-  --radius: 18px !important;
-}
-
-html, body {
-  background: #f7f1ed !important;
-  color: #3b1830 !important;
-}
-
-body {
-  font-family: "DM Sans", Arial, sans-serif !important;
-  font-size: 16px !important;
-}
-
-/* APP BACKGROUND */
-.app-shell,
-main {
-  background: #f7f1ed !important;
-}
-
-main {
-  color: #3b1830 !important;
-}
-
-/* SIDEBAR */
-aside {
-  background: linear-gradient(180deg, #610d2d 0%, #4d0925 100%) !important;
-  border-right: 1px solid rgba(255,255,255,.12) !important;
-}
-
-.sidebar-brand h2,
-.sidebar-brand span,
-.brand-caption,
-nav button,
-.sidebar-quote,
-.sidebar-quote strong,
-.logout-btn {
-  color: #fff5f7 !important;
-}
-
-.sidebar-brand span,
-.sidebar-quote div {
-  color: #e6b765 !important;
-}
-
-nav button {
-  background: transparent !important;
-}
-
-nav button:hover {
-  background: rgba(255,255,255,.08) !important;
-  color: #fff !important;
-}
-
-nav button.active {
-  background: linear-gradient(135deg, #c01850, #970d3b) !important;
-  color: #fff !important;
-  box-shadow: 0 8px 22px rgba(120, 5, 45, .24) !important;
-}
-
-.sidebar-location a {
-  color: #f1c77d !important;
-  border-color: rgba(241,199,125,.28) !important;
-  background: rgba(255,255,255,.045) !important;
-}
-
-.logout-btn {
-  border-color: rgba(255,255,255,.15) !important;
-  background: rgba(255,255,255,.045) !important;
-}
-
-/* TOPBAR */
-.topbar {
-  background: rgba(255,253,251,.94) !important;
-  border-bottom: 1px solid #ead8d1 !important;
-  color: #3b1830 !important;
-}
-
-.top-search input {
-  background: #fffdfb !important;
-  border-color: #ead8d1 !important;
-  color: #3b1830 !important;
-}
-
-.top-search input::placeholder,
-.search-card input::placeholder,
-.field input::placeholder,
-.field textarea::placeholder {
-  color: #9b8992 !important;
-  opacity: 1 !important;
-}
-
-.top-search i,
-.search-card i {
-  color: #a86b16 !important;
-}
-
-.profile-details span {
-  color: #846f7c !important;
-}
-
-.profile-details strong {
-  color: #3b1830 !important;
-}
-
-.profile-avatar {
-  background: linear-gradient(135deg, #8d0b36, #650824) !important;
-}
-
-/* PAGE */
-.page {
-  background: #f7f1ed !important;
-}
-
-.page-header h1,
-.page-header p,
-.section-title,
-.card h2,
-.card h3,
-.card h4 {
-  color: #4b1234 !important;
-}
-
-.page-header p {
-  color: #766473 !important;
-}
-
-.section-label {
-  color: #a86b16 !important;
-}
-
-/* HERO — BURGUNDY LUXURY */
-.hero {
-  background:
-    radial-gradient(circle at 88% 20%, rgba(255,184,202,.14), transparent 25%),
-    linear-gradient(135deg, #7a0c32 0%, #650b2b 52%, #4d0925 100%) !important;
-  border: 1px solid rgba(116, 6, 45, .12) !important;
-  box-shadow: 0 18px 40px rgba(82, 15, 42, .16) !important;
-}
-
-.hero-small {
-  color: #f0c76f !important;
-}
-
-.hero h1 {
-  color: #fff8f5 !important;
-}
-
-.hero h1 span {
-  color: #fff8f5 !important;
-}
-
-.hero p {
-  color: #f7dfe5 !important;
-}
-
-.hero-message {
-  color: #fff0f2 !important;
-}
-
-.hero-message span {
-  color: #ff91b0 !important;
-}
-
-/* DASHBOARD CARDS */
-.stat-card,
-.card,
-.customer-card,
-.report-card,
-.availability-card,
-.availability-clock-panel,
-.booking-table {
-  background: #fffdfb !important;
-  border: 1px solid #ead8d1 !important;
-  box-shadow: 0 15px 35px rgba(82, 35, 50, .07) !important;
-  color: #3b1830 !important;
-}
-
-.stat-card strong,
-.stat-card span {
-  color: #4b1234 !important;
-}
-
-.stat-card span {
-  color: #806b78 !important;
-}
-
-/* BUTTONS */
-.create,
-.save-btn,
-.login-btn,
-.availability-check-btn {
-  background: linear-gradient(135deg, #c3144d, #a00b3c) !important;
-  color: #fff !important;
-  box-shadow: 0 10px 24px rgba(168, 11, 60, .18) !important;
-}
-
-.create:hover,
-.save-btn:hover,
-.login-btn:hover,
-.availability-check-btn:hover {
-  background: linear-gradient(135deg, #d31b57, #ae0d43) !important;
-}
-
-/* SEARCH */
-.search-card {
-  background: #fffdfb !important;
-  border: 1px solid #ead8d1 !important;
-  padding: 14px !important;
-}
-
-.search-card input {
-  background: #fffdfb !important;
-  color: #3b1830 !important;
-  border: 1px solid #ead8d1 !important;
-}
-
-/* BOOKING TABLE — IMPORTANT TEXT VISIBILITY FIX */
-.booking-table {
-  overflow: hidden !important;
-  background: #fffdfb !important;
-}
-
-.booking-table-head {
-  background: #f8e3e8 !important;
-  color: #74123b !important;
-  border: 0 !important;
-}
-
-.booking-table-head > * {
-  color: #74123b !important;
-}
-
-.fullrow {
-  background: #fffdfb !important;
-  color: #4b3a45 !important;
-  border-top: 1px solid #f0e0db !important;
-}
-
-.fullrow > * {
-  color: #5a4854 !important;
-  opacity: 1 !important;
-}
-
-.fullrow strong,
-.fullrow b,
-.fullrow .event-title,
-.fullrow .customer-name {
-  color: #4b1234 !important;
-  font-weight: 700 !important;
-  opacity: 1 !important;
-}
-
-.fullrow .meta,
-.fullrow small,
-.fullrow span {
-  color: #786777 !important;
-  opacity: 1 !important;
-}
-
-.fullrow .package-cost-small {
-  color: #c0164e !important;
-  opacity: 1 !important;
-  font-weight: 800 !important;
-}
-
-.fullrow .date,
-.fullrow .time {
-  color: #5f4b58 !important;
-  opacity: 1 !important;
-}
-
-/* Status badges */
-.badge {
-  background: #fbe1e8 !important;
-  border: 1px solid #f2a8bb !important;
-  color: #d14b72 !important;
-  opacity: 1 !important;
-}
-
-.badge.status-completed {
-  background: #dff5e5 !important;
-  border-color: #9bd6aa !important;
-  color: #218345 !important;
-  box-shadow: none !important;
-}
-
-.badge.status-cancelled {
-  background: #f1eeee !important;
-  border-color: #ddd4d7 !important;
-  color: #766b70 !important;
-}
-
-/* Row action buttons */
-.row-actions .mini,
-.mini {
-  background: #fffdfb !important;
-  border: 1px solid #ead0d6 !important;
-  color: #a70f43 !important;
-}
-
-.row-actions .mini:hover,
-.mini:hover {
-  background: #f9e7eb !important;
-}
-
-.row-actions .mini.danger,
-.mini.danger {
-  color: #c52c3e !important;
-  border-color: #ecc7cb !important;
-  background: #fffdfb !important;
-}
-
-/* FORMS */
-.field label,
-.login-card label,
-.availability-clock-group label {
-  color: #4b1234 !important;
-}
-
-.field input,
-.field select,
-.field textarea,
-.availability-clock-row select,
-.booking-clock-row select {
-  background: #fffdfb !important;
-  color: #3b1830 !important;
-  border: 1px solid #e2d2cc !important;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus,
-.availability-clock-row select:focus,
-.booking-clock-row select:focus {
-  border-color: #c78a35 !important;
-  box-shadow: 0 0 0 3px rgba(199,138,53,.10) !important;
-}
-
-.field select option,
-.availability-clock-row select option,
-.booking-clock-row select option {
-  background: #fffdfb !important;
-  color: #3b1830 !important;
-}
-
-/* AVAILABILITY */
-.availability-clock-panel {
-  background: #fffdfb !important;
-}
-
-.availability-time,
-.availability-date {
-  background: #fffdfb !important;
-  color: #4b1234 !important;
-  border-color: #ead8d1 !important;
-}
-
-.availability-time:hover:not(:disabled),
-.availability-time.start-selected,
-.availability-time.end-selected,
-.availability-date.selected {
-  background: linear-gradient(135deg, #b70f48, #920b37) !important;
-  color: #fff !important;
-  border-color: #b70f48 !important;
-}
-
-.availability-selection {
-  background: #f9e8ec !important;
-  border-color: #e8cbd3 !important;
-  color: #4b1234 !important;
-}
-
-.availability-time.booked {
-  background: #eee8e8 !important;
-  color: #aaa0a4 !important;
-}
-
-/* MODALS */
-.modal-box {
-  background: #fffdfb !important;
-  border: 1px solid #ead8d1 !important;
-  color: #3b1830 !important;
-}
-
-.modal-head h2,
-.modal-box h2,
-.modal-box h3 {
-  color: #4b1234 !important;
-}
-
-.modal-box p,
-.modal-box span {
-  color: #786777 !important;
-}
-
-/* LOGIN */
-.login-screen {
-  background:
-    radial-gradient(circle at 15% 20%, rgba(179,15,70,.12), transparent 30%),
-    radial-gradient(circle at 85% 80%, rgba(199,138,53,.10), transparent 28%),
-    #f7f1ed !important;
-}
-
-.login-card {
-  background: #fffdfb !important;
-  border: 1px solid #ead8d1 !important;
-  box-shadow: 0 25px 60px rgba(82,35,50,.12) !important;
-  color: #3b1830 !important;
-}
-
-.login-card h2,
-.login-logo h1 {
-  color: #4b1234 !important;
-}
-
-.login-description,
-.login-tagline,
-.signup-link {
-  color: #786777 !important;
-}
-
-.input-wrap input {
-  background: #fffdfb !important;
-  color: #3b1830 !important;
-  border-color: #e2d2cc !important;
-}
-
-.input-wrap input::placeholder {
-  color: #9b8992 !important;
-}
-
-/* Staff / reports / event cards */
-.event-card,
-.staff-panel {
-  background: #fffdfb !important;
-  border-color: #ead8d1 !important;
-  color: #3b1830 !important;
-}
-
-.event-card h3,
-.staff-panel h3,
-.report-card strong {
-  color: #4b1234 !important;
-}
-
-.event-card p,
-.staff-panel p,
-.report-card span {
-  color: #786777 !important;
-}
-
-/* LINKS */
-a {
-  color: #a70f43;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .page {
-    padding: 24px 18px !important;
-  }
-  .hero {
-    padding: 28px !important;
-  }
-  .hero-message {
-    font-size: 20px !important;
-  }
-}
-
-
-/* =========================================================
-   DREAM TOWN SURPRISES — KODUNGAIYUR
-   COMPLETE LUXURY WINE + IVORY THEME
-   Full visual override — functionality unchanged.
-   ========================================================= */
 :root{
   --bg:#f6f0ec !important;
   --sidebar:#570d2b !important;
@@ -4093,449 +3605,97 @@ a {
   --pink-dark:#870a35 !important;
   --border:#e6d5ce !important;
   --shadow:0 16px 38px rgba(74,27,48,.09) !important;
+  --radius:18px !important;
 }
+*{box-sizing:border-box}
 html,body{background:#f6f0ec!important;color:#3d1930!important}
-body{font-family:"DM Sans",Arial,sans-serif!important;font-size:16px!important}
+body{font-family:"DM Sans",Arial,sans-serif!important;font-size:16px!important;min-height:100vh}
 button,input,select,textarea{font-family:inherit!important}
+button{cursor:pointer}
+.hidden{display:none!important}
+
+/* LOGIN */
+.login-screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;background:radial-gradient(circle at 10% 15%,rgba(181,18,75,.12),transparent 28%),radial-gradient(circle at 90% 85%,rgba(199,138,53,.10),transparent 28%),#f6f0ec!important}
+.login-card{width:min(1080px,94vw)!important;min-height:600px!important;padding:0!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(360px,.72fr)!important;overflow:hidden!important;text-align:left!important;border:1px solid #e6d5ce!important;border-radius:24px!important;background:#fffdfb!important;box-shadow:0 28px 75px rgba(74,27,48,.14)!important;position:relative!important}
+.login-card>*:not(.login-visual){margin-left:56px;margin-right:56px}
+.login-card>.login-logo{margin-top:42px}
+.login-logo{justify-content:flex-start;gap:12px}
+.logo-heart{width:48px;height:48px;background:linear-gradient(135deg,#b5124b,#870a35)!important;color:#fff!important;box-shadow:0 8px 22px rgba(181,18,75,.18)!important}
+.login-logo h1{color:#4d1236!important;font-family:"Playfair Display",serif!important}
+.login-logo span{color:#a86b16!important}
+.login-tagline,.login-description,.signup-link{color:#756572!important}
+.login-card h2{color:#4d1236!important;font-family:"Playfair Display",serif!important}
+.login-card label{color:#4b1735!important}
+.input-wrap input{background:#fff!important;color:#3d1930!important;border:1px solid #e1d0ca!important;border-radius:11px!important}
+.input-wrap input::placeholder{color:#9b8992!important;opacity:1!important}
+.input-wrap i{color:#a86b16!important}
+.input-wrap input:focus{border-color:#b5124b!important;box-shadow:0 0 0 3px rgba(181,18,75,.08)!important}
+.login-options button,.signup-link button{color:#a70f43!important}
+.login-btn{background:linear-gradient(135deg,#c3144d,#9f0b3c)!important;color:#fff!important;box-shadow:0 10px 24px rgba(168,11,60,.18)!important}
+.auth-message{color:#b7354d!important}
+.login-visual{grid-column:2;grid-row:1 / span 6;display:block;min-height:600px;position:relative;overflow:hidden;background:#5a0d2b}
+.login-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.login-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(55,5,27,.05),rgba(55,5,27,.28));pointer-events:none}
+.login-visual-copy{position:absolute;z-index:2;left:28px;right:28px;bottom:38px;text-align:right;color:#fff8f2;text-shadow:0 2px 15px rgba(0,0,0,.35)}
+.login-visual-copy span,.login-visual-copy small{display:block;letter-spacing:2px;text-transform:uppercase;font-size:11px;font-weight:800}
+.login-visual-copy strong{display:block;margin:12px 0;font:italic 700 38px/1.02 "Playfair Display",serif}
+.login-visual-copy small{color:#f1c878}
 
 /* APP */
 .app-shell,main,.page{background:#f6f0ec!important;color:#3d1930!important}
 main{width:calc(100% - 255px)!important;margin-left:255px!important}
 .page{padding:34px 36px 70px!important}
-
-/* SIDEBAR */
 aside{background:linear-gradient(180deg,#650d30 0%,#4b0926 100%)!important;border-right:1px solid rgba(255,255,255,.12)!important;box-shadow:8px 0 28px rgba(67,8,35,.08)!important}
-.sidebar-brand h2{color:#fff8f7!important}
-.sidebar-brand span{color:#e9bd73!important}
-.brand-caption{color:#f0dce1!important}
-nav button{color:#f3e5e8!important}
-nav button i{color:inherit!important}
+.sidebar-brand h2,.sidebar-brand span,.brand-caption,.sidebar-quote,.sidebar-quote strong,nav button,.logout-btn{color:#fff5f7!important}
+.sidebar-brand span,.sidebar-quote div{color:#e9bd73!important}
+nav button{background:transparent!important}
 nav button:hover{background:rgba(255,255,255,.08)!important;color:#fff!important}
 nav button.active{background:linear-gradient(135deg,#c01650,#980b3a)!important;color:#fff!important;box-shadow:0 9px 22px rgba(126,5,49,.25)!important}
 .sidebar-location a{color:#f0c77e!important;border-color:rgba(240,199,126,.30)!important;background:rgba(255,255,255,.045)!important}
-.sidebar-quote{color:#e3cfd4!important}.sidebar-quote strong{color:#fff3f2!important}.sidebar-quote div{color:#e9bd73!important}
-.logout-btn{color:#fff1f3!important;border-color:rgba(255,255,255,.16)!important;background:rgba(255,255,255,.05)!important}
-
-/* TOPBAR */
+.logout-btn{border-color:rgba(255,255,255,.16)!important;background:rgba(255,255,255,.05)!important}
 .topbar{background:rgba(255,253,251,.96)!important;border-bottom:1px solid #e7d8d2!important;color:#3d1930!important;box-shadow:0 4px 18px rgba(72,29,48,.035)!important}
+.menu-button{color:#6c1237!important}
 .top-search input{background:#fffdfb!important;color:#3d1930!important;border:1px solid #e2d1cb!important}
-.top-search input::placeholder{color:#9a8791!important;opacity:1!important}.top-search i{color:#a86b16!important}
+.top-search input::placeholder{color:#9a8791!important;opacity:1!important}
+.top-search i{color:#a86b16!important}
 .top-location{color:#a86b16!important;border-color:#e4cfb4!important;background:#fffaf5!important}
 .profile-details span{color:#826f79!important}.profile-details strong{color:#3d1930!important}.profile-avatar{background:linear-gradient(135deg,#8d0c36,#650824)!important;color:#fff!important}
-.menu-button{color:#6c1237!important}
-
-/* TYPOGRAPHY */
 .page-header h1,.section-heading h2,.section-title,.card h2,.card h3,.card h4,.event-card h3,.report-card strong,.staff-panel h3{color:#4d1236!important}
-.page-header p,.login-description,.login-tagline,.signup-link,.event-card p,.staff-panel p,.report-card span{color:#756572!important}
-.section-label{color:#a86b16!important}
-.text-button{color:#a50e43!important}
-a{color:#a50e43}
+.page-header p,.event-card p,.report-card span,.staff-user-email,.staff-user-meta{color:#756572!important}
+.section-label{color:#a86b16!important}.text-button{color:#a50e43!important}
 
 /* HERO */
-.hero{min-height:265px!important;padding:40px 48px!important;background:radial-gradient(circle at 86% 22%,rgba(255,180,200,.15),transparent 25%),linear-gradient(135deg,#790c33 0%,#650a2d 52%,#4c0825 100%)!important;border:1px solid rgba(119,7,46,.12)!important;box-shadow:0 18px 40px rgba(78,13,42,.16)!important}
-.hero-small{color:#f0c76f!important}.hero h1,.hero h1 span{color:#fff9f6!important}.hero p{color:#f6dfe5!important}.hero-message{color:#fff0f2!important}.hero-message span{color:#ff91b0!important}.hero-branch{color:#f1c77d!important}
+.hero{min-height:265px!important;padding:40px 48px!important;background:radial-gradient(circle at 88% 18%,rgba(255,180,200,.15),transparent 25%),linear-gradient(135deg,#790c33 0%,#650a2d 52%,#4c0825 100%)!important;border:1px solid rgba(119,7,46,.12)!important;box-shadow:0 18px 40px rgba(78,13,42,.16)!important}
+.hero-small{color:#f0c76f!important}.hero h1,.hero h1 span{color:#fff9f6!important}.hero p{color:#f6dfe5!important}.hero-message{color:#fff0f2!important}.hero-message span{color:#ff91b0!important}.hero-branch{color:#f1c77d!important;font:600 18px "Playfair Display",serif;margin:5px 0 4px!important}
 
-/* STATS */
-.stats-grid{gap:18px!important}
-.stat-card{background:#fffdfb!important;border:1px solid #e8d9d3!important;box-shadow:0 13px 30px rgba(79,32,49,.07)!important;color:#3d1930!important}
-.stat-one,.stat-two,.stat-three,.stat-four{background:#fffdfb!important}
-.stat-icon{background:#f9e4ea!important;color:#b20f49!important}.stat-two .stat-icon{background:#e7f6eb!important;color:#20834a!important}.stat-three .stat-icon{background:#fff0d7!important;color:#ad6910!important}.stat-four .stat-icon{background:#fde4e7!important;color:#c72d42!important}
-.stat-card strong{color:#4a1235!important}.stat-card span{color:#7b6875!important}
-
-/* COMMON CARDS */
-.card,.customer-card,.report-card,.availability-card,.availability-clock-panel,.booking-table,.search-card,.event-card,.staff-panel,.map-card,.modal-box{background:#fffdfb!important;border:1px solid #e6d5ce!important;color:#3d1930!important;box-shadow:0 14px 34px rgba(77,31,49,.07)!important}
-
-/* DASHBOARD BOOKINGS */
-.booking{background:#fffdfb!important;border:1px solid #eadbd5!important;color:#3d1930!important}.booking b{color:#4d1937!important}.booking .sub{color:#796773!important}.booking .meta{color:#786773!important}.thumb{background:#f7e2e8!important;color:#a90e43!important}
-.badge{background:#fbe2e8!important;border:1px solid #f0aabd!important;color:#cf4d74!important}
-.badge.status-completed,.status-completed{background:#dff4e5!important;border-color:#9bd4a9!important;color:#218345!important}
-.badge.status-cancelled{background:#f0eeee!important;border-color:#ddd4d7!important;color:#766b70!important}
+/* CARDS / STATS */
+.stat-card,.card,.customer-card,.report-card,.availability-card,.availability-clock-panel,.booking-table,.search-card,.event-card,.staff-panel{background:#fffdfb!important;border:1px solid #e6d5ce!important;color:#3d1930!important;box-shadow:0 14px 34px rgba(77,31,49,.07)!important}
+.stat-one,.stat-two,.stat-three,.stat-four{background:#fffdfb!important}.stat-icon{background:#f9e4ea!important;color:#b20f49!important}.stat-two .stat-icon{background:#e7f6eb!important;color:#20834a!important}.stat-three .stat-icon{background:#fff0d7!important;color:#ad6910!important}.stat-four .stat-icon{background:#fde4e7!important;color:#c72d42!important}.stat-card strong{color:#4a1235!important}.stat-card span{color:#7b6875!important}
+.booking{background:#fffdfb!important;border:1px solid #eadbd5!important;color:#3d1930!important}.booking b{color:#4d1937!important}.booking .sub,.booking .meta{color:#796773!important}.thumb{background:#f7e2e8!important;color:#a90e43!important}
 
 /* BUTTONS */
-.create,.create-big,.save-btn,.login-btn,.availability-check-btn{background:linear-gradient(135deg,#c3144d,#9f0b3c)!important;color:#fff!important;border:0!important;box-shadow:0 10px 24px rgba(168,11,60,.18)!important}
-.create:hover,.create-big:hover,.save-btn:hover,.login-btn:hover,.availability-check-btn:hover{background:linear-gradient(135deg,#d31b57,#ae0d43)!important}
-.cancel-btn{background:#fffdfb!important;color:#6e5965!important;border:1px solid #e1d1cb!important}
+.create,.create-big,.save-btn,.login-btn,.availability-check-btn{background:linear-gradient(135deg,#c3144d,#9f0b3c)!important;color:#fff!important;border:0!important}.create:hover,.create-big:hover,.save-btn:hover,.login-btn:hover,.availability-check-btn:hover{background:linear-gradient(135deg,#d31b57,#ae0d43)!important}.cancel-btn{background:#fffdfb!important;color:#6e5965!important;border:1px solid #e1d1cb!important}
 
-/* BOOKINGS SEARCH */
-.search-card{background:#fffdfb!important;border:1px solid #e5d5cf!important;padding:14px 18px!important;box-shadow:0 8px 20px rgba(77,31,49,.04)!important}
-.search-card input{background:#fffdfb!important;color:#3d1930!important;border:1px solid #e4d3cd!important}
-.search-card input::placeholder{color:#9b8992!important;opacity:1!important}.search-card i{color:#a86b16!important}
-
-/* BOOKING TABLE */
-.booking-table{overflow:hidden!important;background:#fffdfb!important;border-radius:20px!important}
-.booking-table-head{background:#f7e2e8!important;color:#75123d!important;border:0!important}
-.booking-table-head>*{color:#75123d!important}
-.fullrow{background:#fffdfb!important;color:#4b3945!important;border-top:1px solid #f0e0db!important;opacity:1!important}
-.fullrow>*{color:#5d4a56!important;opacity:1!important}
-.fullrow strong,.fullrow b{color:#4a1735!important;font-weight:700!important;opacity:1!important}
-.fullrow .sub{color:#806d78!important;opacity:1!important}
-.fullrow .package-cost-small{color:#c0164e!important;font-weight:800!important;opacity:1!important}
-.fullrow .badge{opacity:1!important}
-.fullrow .row-actions{opacity:1!important}
-.row-actions .mini,.mini{background:#fffdfb!important;border:1px solid #e4cfd5!important;color:#a70f43!important;opacity:1!important}
-.row-actions .mini:hover,.mini:hover{background:#fae8ed!important}.row-actions .mini.danger,.mini.danger{color:#c52c3e!important;border-color:#ecc7cb!important;background:#fffdfb!important}
+/* TABLE */
+.booking-table{overflow:hidden!important;border-radius:20px!important}.booking-table-head{background:#f7e2e8!important;color:#75123d!important}.booking-table-head>*{color:#75123d!important}.fullrow{background:#fffdfb!important;color:#5d4a56!important;border-top:1px solid #f0e0db!important}.fullrow>*{color:#5d4a56!important;opacity:1!important}.fullrow strong,.fullrow b{color:#4a1735!important}.fullrow .sub,.fullrow small,.fullrow span{color:#806d78!important}.fullrow .package-cost-small{color:#c0164e!important;font-weight:800!important}
+.badge{background:#fbe2e8!important;border:1px solid #f0aabd!important;color:#cf4d74!important}.badge.status-completed,.status-completed{background:#dff4e5!important;border-color:#9bd4a9!important;color:#218345!important}.badge.status-cancelled{background:#f0eeee!important;border-color:#ddd4d7!important;color:#766b70!important}.row-actions .mini,.mini{background:#fffdfb!important;border:1px solid #e4cfd5!important;color:#a70f43!important}.mini:hover{background:#fae8ed!important}.mini.danger{color:#c52c3e!important;border-color:#ecc7cb!important;background:#fffdfb!important}
 
 /* FORMS */
-.field label,.login-card label,.availability-clock-group label{color:#4b1735!important}
-.field input,.field select,.field textarea,.availability-clock-row select,.booking-clock-row select,.time-picker-field select{background:#fffdfb!important;color:#3d1930!important;border:1px solid #e1d0ca!important}
-.field input::placeholder,.field textarea::placeholder{color:#9b8992!important;opacity:1!important}
-.field input:focus,.field select:focus,.field textarea:focus,.availability-clock-row select:focus,.booking-clock-row select:focus{border-color:#c78a35!important;box-shadow:0 0 0 3px rgba(199,138,53,.11)!important}
-.field select option,.availability-clock-row select option,.booking-clock-row select option{background:#fffdfb!important;color:#3d1930!important}
-.form-error{color:#bd3046!important}.custom-package-cost{background:#fffdfb!important;color:#3d1930!important}
-
-/* ADD BOOKING / MODAL */
-.modal{background:rgba(60,16,38,.36)!important;backdrop-filter:blur(5px)!important}
-.modal-box{background:#fffdfb!important;border:1px solid #e6d5ce!important;color:#3d1930!important;box-shadow:0 28px 80px rgba(55,18,39,.20)!important}
-.modal-head{border-bottom:1px solid #eee0db!important}.modal-head h2,.modal-box h2,.modal-box h3{color:#4b1234!important}.modal-close{color:#6d5060!important;background:#f8eeeb!important}.modal-close:hover{background:#f3e1e6!important;color:#a70f43!important}
-.booking-map{background:#fbf1f1!important;border:1px solid #ead4d7!important;color:#4b1735!important}.booking-map-icon{background:#f7dfe6!important;color:#b00f48!important}.booking-map span{color:#826f79!important}
+.field label,.login-card label,.availability-clock-group label{color:#4b1735!important}.field input,.field select,.field textarea,.availability-clock-row select,.booking-clock-row select,.time-picker-field select,.custom-event-input{background:#fffdfb!important;color:#3d1930!important;border:1px solid #e1d0ca!important}.field input::placeholder,.field textarea::placeholder,.custom-event-input::placeholder{color:#9b8992!important;opacity:1!important}.field input:focus,.field select:focus,.field textarea:focus,.availability-clock-row select:focus,.booking-clock-row select:focus,.custom-event-input:focus{border-color:#c78a35!important;box-shadow:0 0 0 3px rgba(199,138,53,.11)!important}.field select option,.availability-clock-row select option,.booking-clock-row select option{background:#fffdfb!important;color:#3d1930!important}.form-error{color:#bd3046!important}
 
 /* AVAILABILITY */
-.availability-header,.availability-title{color:#4b1234!important}.availability-help,.availability-instruction{color:#796773!important}
-.availability-dates{background:#fffdfb!important;border-color:#e6d5ce!important}.availability-date{background:#fffdfb!important;color:#4b1735!important;border-color:#eadbd5!important}.availability-date:hover,.availability-date.selected{background:linear-gradient(135deg,#b70f48,#920b37)!important;color:#fff!important;border-color:#b70f48!important}
-.availability-time-grid{background:#fffdfb!important}.availability-time,.time-slot,.booking-time-button{background:#fffdfb!important;color:#4b1735!important;border:1px solid #e5d7d1!important}.availability-time:hover:not(:disabled),.availability-time.start-selected,.availability-time.end-selected,.time-slot.selected,.booking-time-button.selected{background:linear-gradient(135deg,#b70f48,#920b37)!important;color:#fff!important;border-color:#b70f48!important}.availability-time.booked,.time-slot.unavailable,.availability-time.unavailable{background:#eee9e8!important;color:#aaa0a4!important;border-color:#ded6d4!important}
-.availability-selection,.availability-selected-times{background:#f9e8ec!important;border-color:#e8cbd3!important;color:#4b1234!important}.availability-status{color:#4b1735!important}.availability-booked-list{background:#fffdfb!important;border-color:#e6d5ce!important}.availability-booked-item{background:#fbf2f2!important;border-color:#ead9d6!important;color:#4b1735!important}.availability-booked-time{color:#a70f43!important}
+.availability-header h2,.availability-title{color:#4b1234!important}.availability-help,.availability-instruction{color:#796773!important}.availability-date,.availability-time,.time-slot,.booking-time-button{background:#fffdfb!important;color:#4b1735!important;border-color:#e5d7d1!important}.availability-date:hover,.availability-date.selected,.availability-time:hover:not(:disabled),.availability-time.start-selected,.availability-time.end-selected,.time-slot.selected,.booking-time-button.selected{background:linear-gradient(135deg,#b70f48,#920b37)!important;color:#fff!important;border-color:#b70f48!important}.availability-time.booked,.time-slot.unavailable,.availability-time.unavailable{background:#eee9e8!important;color:#aaa0a4!important;border-color:#ded6d4!important}.availability-selection{background:#f9e8ec!important;border-color:#e8cbd3!important;color:#4b1234!important}.availability-booked-item{background:#fbf2f2!important;border-color:#ead9d6!important;color:#4b1735!important}.availability-booked-time{color:#a70f43!important}
 
-/* EVENT TYPES */
-.event-grid{gap:18px!important}.event-card{background:#fffdfb!important;border:1px solid #e6d5ce!important}.event-card:hover{border-color:#d9a6b8!important;box-shadow:0 18px 38px rgba(78,28,49,.10)!important}.event-heading{color:#a70f43!important}.event-title{color:#4b1735!important}.event-card p{color:#796773!important}
+/* MODALS */
+.modal{background:rgba(60,16,38,.36)!important;backdrop-filter:blur(5px)!important}.modal-box{background:#fffdfb!important;border:1px solid #e6d5ce!important;color:#3d1930!important;box-shadow:0 28px 80px rgba(55,18,39,.20)!important}.modal-head h2,.modal-box h2,.modal-box h3{color:#4b1234!important}.modal-close{color:#6d5060!important;background:#f8eeeb!important}.booking-map{background:#fbf1f1!important;border:1px solid #ead4d7!important;color:#4b1735!important}.booking-map-icon{background:#f7dfe6!important;color:#b00f48!important}
 
-/* REPORTS */
-.reports-grid{gap:18px!important}.report-card{background:#fffdfb!important;border:1px solid #e6d5ce!important}.report-card strong{color:#4b1735!important}.report-card span{color:#796773!important}
+/* EVENT / REPORT / STAFF */
+.event-card:hover{border-color:#d9a6b8!important;box-shadow:0 18px 38px rgba(78,28,49,.10)!important}.event-card p,.report-card span{color:#796773!important}.staff-user{background:#fbf3f1!important;border:1px solid #eadbd5!important}.staff-user-name{color:#4b1735!important}.staff-action{background:#fffdfb!important;border:1px solid #e2d0d5!important;color:#a70f43!important}.staff-action.approve,.staff-action.enable{color:#218345!important;border-color:#b9ddc3!important;background:#eff9f1!important}.staff-action.disable{color:#bd3046!important;border-color:#ecc7cb!important;background:#fff2f2!important}
 
-/* STAFF / USERS */
-.staff-panel{background:#fffdfb!important;border:1px solid #e6d5ce!important}.staff-user{background:#fbf3f1!important;border:1px solid #eadbd5!important;color:#4b1735!important}.staff-user-name{color:#4b1735!important}.staff-user-email,.staff-user-meta{color:#796773!important}.staff-action{background:#fffdfb!important;border:1px solid #e2d0d5!important;color:#a70f43!important}.staff-action.approve,.staff-action.enable{color:#218345!important;border-color:#b9ddc3!important;background:#eff9f1!important}.staff-action.disable{color:#bd3046!important;border-color:#ecc7cb!important;background:#fff2f2!important}.staff-status.approved{color:#218345!important;background:#e2f5e7!important}.staff-status.disabled{color:#bd3046!important;background:#fae7e8!important}.staff-status{color:#9b6c18!important;background:#fbf0d8!important}
+/* SAFETY */
+.page *{text-shadow:none!important}.page input,.page select,.page textarea{color:#3d1930!important}.page input:disabled,.page select:disabled,.page textarea:disabled{color:#8e8189!important;background:#f2ece9!important}
 
-/* LOGIN — FULL MATCH */
-.login-screen{background:radial-gradient(circle at 15% 20%,rgba(181,18,75,.11),transparent 30%),radial-gradient(circle at 85% 80%,rgba(199,138,53,.10),transparent 28%),#f6f0ec!important}
-.login-card{background:#fffdfb!important;border:1px solid #e5d5cf!important;box-shadow:0 28px 70px rgba(74,27,48,.13)!important;color:#3d1930!important}
-.login-logo h1{color:#4b1234!important}.login-logo span{color:#a86b16!important}.login-tagline,.login-description,.signup-link{color:#796773!important}.login-card label{color:#4b1735!important}.input-wrap input{background:#fffdfb!important;color:#3d1930!important;border-color:#e1d0ca!important}.input-wrap input::placeholder{color:#9b8992!important}.input-wrap i{color:#a86b16!important}.login-options button,.signup-link button{color:#a70f43!important}.auth-message{color:#b7354d!important}
-
-/* MAP / MISC */
-.map-card{background:#fffdfb!important;border-color:#e6d5ce!important;color:#4b1735!important}.map-icon{background:#f7dfe6!important;color:#b00f48!important}
-.empty,.staff-empty{color:#8a7782!important}.availability-free{color:#218345!important}.available{color:#218345!important}.unavailable{color:#9d8e95!important}.disabled{opacity:.55!important}
-
-/* GLOBAL READABILITY SAFETY NET */
-.page *{text-shadow:none!important}
-.page input,.page select,.page textarea{color:#3d1930!important}
-.page input:disabled,.page select:disabled,.page textarea:disabled{color:#8e8189!important;background:#f2ece9!important}
-
-/* RESPONSIVE */
-@media(max-width:1100px){.stats-grid{grid-template-columns:repeat(2,1fr)!important}.dashboard-grid{grid-template-columns:1fr!important}.hero-message{font-size:21px!important}.page{padding:28px 24px 60px!important}}
-@media(max-width:850px){aside{transform:translateX(-100%);transition:.25s ease}main{width:100%!important;margin-left:0!important}.menu-button{display:block!important}.top-search{width:min(420px,58vw)!important}.page{padding:22px 16px 50px!important}.hero{padding:28px!important;min-height:230px!important}.hero-message{display:none!important}.stats-grid{grid-template-columns:1fr 1fr!important}}
-@media(max-width:600px){.stats-grid{grid-template-columns:1fr!important}.page-header{align-items:flex-start!important;flex-direction:column!important}.page-header h1{font-size:30px!important}.topbar{padding:0 16px!important}.top-search{width:100%!important}.profile-details{display:none!important}.hero h1{font-size:34px!important}.booking-table{overflow-x:auto!important}.booking-table-head,.fullrow{min-width:900px!important}.search-card{padding:10px!important}}
-
-/* =========================================================
-   REFERENCE IMAGE LAYER — DREAM TOWN SURPRISES KODUNGAIYUR
-   ========================================================= */
-.hero {
-  background-image:
-    linear-gradient(90deg, rgba(77, 5, 31, .98) 0%, rgba(86, 8, 35, .93) 46%, rgba(86, 8, 35, .48) 72%, rgba(86, 8, 35, .18) 100%),
-    url("hero.png");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(61, 4, 27, .18), transparent 58%);
-  pointer-events: none;
-}
-
-.hero-content,
-.hero-message {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-branch {
-  color: #f0c77c !important;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: 18px !important;
-  font-weight: 600;
-  margin: 5px 0 4px !important;
-}
-
-.hero-message {
-  text-shadow: 0 2px 18px rgba(0,0,0,.28);
-}
-
-/* Login becomes the photographic split-screen shown in the reference. */
-.login-screen {
-  padding: 28px;
-  background:
-    radial-gradient(circle at 12% 10%, rgba(176, 21, 70, .09), transparent 25%),
-    radial-gradient(circle at 88% 90%, rgba(201, 154, 74, .08), transparent 28%),
-    #f7f1ed;
-}
-
-.login-card {
-  width: min(1120px, 100%);
-  min-height: 650px;
-  padding: 0;
-  display: grid;
-  grid-template-columns: minmax(420px, 1fr) minmax(380px, .78fr);
-  overflow: hidden;
-  text-align: left;
-  border: 1px solid #ead9d0;
-  border-radius: 22px;
-  background: #fffaf7;
-  box-shadow: 0 28px 80px rgba(80, 26, 43, .16);
-}
-
-.login-card > .login-logo,
-.login-card > .login-tagline,
-.login-card > #loginPanel,
-.login-card > #signupPanel {
-  grid-column: 1;
-  margin-left: 58px;
-  margin-right: 58px;
-}
-
-.login-card > .login-logo { margin-top: 48px; }
-.login-card > .login-tagline { margin-bottom: 24px; }
-.login-card > #loginPanel,
-.login-card > #signupPanel { margin-bottom: 48px; }
-
-.login-logo { justify-content: flex-start; }
-.login-logo h1 { color: #64102e; }
-.login-logo span { color: #a67a34; }
-.logo-heart {
-  background: linear-gradient(135deg, #a70f43, #720d32);
-  color: #fff5e9;
-}
-
-.login-card h2 { color: #6b1234; }
-.login-card label { color: #4d2735; }
-.login-description,
-.login-tagline,
-.signup-link { color: #806a73; }
-
-.input-wrap input {
-  background: #fff;
-  color: #351521;
-  border-color: #e7d5cd;
-  box-shadow: 0 4px 15px rgba(77, 18, 39, .035);
-}
-.input-wrap input::placeholder { color: #9b8990; }
-.input-wrap input:focus {
-  border-color: #a90e45;
-  box-shadow: 0 0 0 3px rgba(169,14,69,.08);
-}
-
-.login-options button,
-.signup-link button { color: #97103f; }
-.login-btn {
-  background: linear-gradient(135deg, #a80d43, #780d35);
-  box-shadow: 0 12px 24px rgba(137, 12, 55, .18);
-}
-
-.login-image-panel {
-  grid-column: 2;
-  grid-row: 1 / span 4;
-  min-height: 650px;
-  position: relative;
-  overflow: hidden;
-  background-image: url("login.png");
-  background-size: cover;
-  background-position: 58% center;
-}
-
-.login-image-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(90deg, rgba(255,250,247,.08), rgba(76,5,31,.08)),
-    linear-gradient(180deg, rgba(60,4,27,.04), rgba(60,4,27,.22));
-}
-
-.login-image-copy {
-  position: absolute;
-  top: 52px;
-  right: 30px;
-  left: 30px;
-  text-align: right;
-  color: #fff8ed;
-  text-shadow: 0 3px 15px rgba(0,0,0,.35);
-}
-.login-image-copy span,
-.login-image-copy small {
-  display: block;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 11px;
-  font-weight: 700;
-}
-.login-image-copy strong {
-  display: block;
-  margin: 12px 0;
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(30px, 3vw, 48px);
-  line-height: .98;
-  font-style: italic;
-}
-.login-image-copy small { color: #f1c878; }
-
-/* Reference-style light cards and readable data across the app. */
-.stat-card,
-.dashboard-card,
-.card,
-.table-card,
-.booking-table-wrap,
-.availability-card,
-.report-card,
-.event-type-card,
-.staff-card,
-.modal-content,
-.form-card {
-  background: #fffdfb;
-  border-color: #ead9d0;
-  color: #351521;
-}
-
-.stat-card h3,
-.stat-card strong,
-.card h3,
-.card h4,
-.booking-table td,
-.booking-table th,
-.table-card td,
-.table-card th {
-  color: #351521;
-}
-
-.booking-table td,
-.table-card td {
-  color: #573b47;
-}
-
-.booking-table tr,
-.table-card tr {
-  border-color: #eee0da;
-}
-
-.booking-table thead th,
-.table-card thead th {
-  background: #f7e3e8;
-  color: #741037;
-}
-
-.search-box,
-.search-wrap,
-.filter-box,
-input,
-select,
-textarea {
-  background: #fffdfb;
-  color: #3b202c;
-  border-color: #e5d2ca;
-}
-
-input::placeholder,
-textarea::placeholder,
-select:invalid {
-  color: #9b8790;
-}
-
-button.primary,
-.primary-btn,
-.add-booking-btn,
-.new-booking-btn {
-  background: linear-gradient(135deg, #b20e49, #850d38);
-  color: #fff;
-}
-
-.status-confirmed { color: #17733d; background: #dff4e7; border-color: #bfe7cc; }
-.status-pending { color: #9b5b00; background: #fff0cf; border-color: #f0d99b; }
-.status-cancelled { color: #b3293b; background: #ffe0e3; border-color: #f3b9c0; }
-.status-completed { color: #126a55; background: #dff4ee; border-color: #b9e3d7; }
-
-@media (max-width: 900px) {
-  .login-card {
-    grid-template-columns: 1fr;
-  }
-  .login-image-panel {
-    grid-column: 1;
-    grid-row: auto;
-    min-height: 300px;
-    order: -1;
-  }
-  .login-card > .login-logo,
-  .login-card > .login-tagline,
-  .login-card > #loginPanel,
-  .login-card > #signupPanel {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  .login-card > .login-logo { margin-top: 30px; }
-}
-
-
-/* CUSTOM EVENT NAME */
-.custom-event-input {
-  margin-top: 10px;
-  width: 100%;
-  min-height: 50px;
-  padding: 13px 16px;
-  border: 1px solid #e3cfc8;
-  border-radius: 12px;
-  background: #fffdfb !important;
-  color: #3d1930 !important;
-  font-size: 16px;
-  outline: none;
-}
-.custom-event-input::placeholder {
-  color: #9b8992 !important;
-  opacity: 1;
-}
-.custom-event-input:focus {
-  border-color: #c78a35 !important;
-  box-shadow: 0 0 0 3px rgba(199,138,53,.11) !important;
-}
-.custom-event-input.hidden {
-  display: none !important;
-}
-
-
-/* FINAL KODUNGAIYUR FIXES */
-.custom-event-input { display:block; width:100%; margin-top:10px; min-height:50px; padding:0 16px; border:1px solid #e2c8cf; border-radius:12px; background:#fffdfc; color:#4a1026 !important; font-size:16px; font-weight:500; outline:none; box-sizing:border-box; }
-.custom-event-input::placeholder { color:#9b8790 !important; opacity:1; }
-.custom-event-input:focus { border-color:#b5163d; box-shadow:0 0 0 3px rgba(181,22,61,.10); }
-.custom-event-input.hidden { display:none !important; }
-.availability-header h2, #availInfo .availability-header h2 { color:#4a1026 !important; opacity:1 !important; text-shadow:none !important; }
-.availability-header .section-label { color:#a56b16 !important; }
-.booking-clock-row select, .availability-clock-row select { background:#fffdfc !important; color:#4a1026 !important; border-color:#e2c8cf !important; color-scheme:light !important; }
-
-
-/* IMAGE DISPLAY FIX */
-.login-card { position:relative; overflow:hidden; }
-.login-visual { position:relative; min-height:420px; overflow:hidden; border-radius:20px; display:none; }
-.login-visual img { width:100%; height:100%; object-fit:cover; display:block; }
-.login-visual::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(58,16,33,.08), rgba(58,16,33,.58)); pointer-events:none; }
-.login-visual-copy { position:absolute; z-index:2; inset:30px 28px auto; color:#fff8f2; text-align:center; text-shadow:0 3px 16px rgba(0,0,0,.35); }
-.login-visual-copy span { display:block; font-size:12px; letter-spacing:3px; font-weight:800; }
-.login-visual-copy strong { display:block; margin-top:20px; font:italic 700 42px/1.02 "Playfair Display",serif; }
-.login-visual-copy small { display:block; margin-top:18px; color:#f2c77f; letter-spacing:3px; }
-.hero-image { position:absolute; right:0; top:0; bottom:0; width:38%; overflow:hidden; pointer-events:none; }
-.hero-image::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg, #4b1027 0%, rgba(75,16,39,.70) 25%, rgba(75,16,39,.08) 100%); }
-.hero-image img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; opacity:.95; }
-.hero-content, .hero-message { position:relative; z-index:2; }
-.hero-message { max-width:42%; }
-@media (min-width: 850px) {
-  .login-card { width:min(1400px,94vw); min-height:720px; padding:0; display:grid; grid-template-columns:minmax(0,1fr) minmax(360px,46%); text-align:left; background:#fffdfb; }
-  .login-card > :not(.login-visual) { padding-left:72px; padding-right:72px; }
-  .login-card > .login-logo { padding-top:55px; }
-  .login-card > .login-tagline { padding-bottom:10px; }
-  .login-card > #loginPanel, .login-card > #signupPanel { padding-top:10px; }
-  .login-visual { display:block; grid-column:2; grid-row:1 / span 6; border-radius:0 25px 25px 0; min-height:720px; }
-}
-@media (max-width:849px) {
-  .hero-image { opacity:.30; width:55%; }
-  .hero-message { max-width:55%; }
-}
-@media (max-width:600px) {
-  .hero-image { opacity:.18; width:70%; }
-  .hero-message { max-width:100%; }
-  .login-visual { display:none; }
-}
+/* MOBILE */
+@media(max-width:900px){main{width:100%!important;margin-left:0!important}.menu-button{display:block!important}.login-card{grid-template-columns:1fr!important;width:min(560px,94vw)!important;min-height:auto!important}.login-card>*:not(.login-visual){margin-left:30px;margin-right:30px}.login-card>.login-logo{margin-top:30px}.login-visual{grid-column:1;grid-row:auto;min-height:280px;order:-1}.page{padding:24px 18px 55px!important}.hero{padding:28px!important}.hero-message{font-size:20px!important}}
+@media(max-width:600px){.stats-grid{grid-template-columns:1fr!important}.page-header{align-items:flex-start!important;flex-direction:column!important}.topbar{padding:0 15px!important}.top-search{width:100%!important}.profile-details{display:none!important}.hero{padding:25px!important;min-height:240px!important}.hero-message{font-size:18px!important;text-align:left!important}.login-card{width:94vw!important}.login-visual{min-height:230px}.login-visual-copy strong{font-size:30px}.form-grid{grid-template-columns:1fr!important}}
+@media(max-width:430px){.login-card>*:not(.login-visual){margin-left:22px;margin-right:22px}.hero h1{font-size:31px!important}}
