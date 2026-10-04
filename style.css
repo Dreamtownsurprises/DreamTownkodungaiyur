@@ -4472,88 +4472,27 @@ button.primary,
 }
 
 
-/* CUSTOM EVENT FIELD */
-.custom-event-name {
-  width: 100%;
+/* CUSTOM EVENT NAME */
+.custom-event-input {
   margin-top: 10px;
-  padding: 13px 14px;
-  border: 1px solid #e5d6d0;
-  border-radius: 11px;
-  background: #fffdfb;
-  color: #321522;
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  border: 1px solid #e3cfc8;
+  border-radius: 12px;
+  background: #fffdfb !important;
+  color: #3d1930 !important;
+  font-size: 16px;
   outline: none;
-  font-size: 15px;
 }
-.custom-event-name::placeholder { color: #9a858e; }
-.custom-event-name:focus {
-  border-color: #a72b53;
-  box-shadow: 0 0 0 3px rgba(167,43,83,.10);
+.custom-event-input::placeholder {
+  color: #9b8992 !important;
+  opacity: 1;
 }
-
-
-/* =========================================================
-   FINAL VISIBILITY + IMAGE FIX
-   ========================================================= */
-.hero {
-  position: relative !important;
-  overflow: hidden !important;
-  background: linear-gradient(90deg,#650b2d 0%,#760d35 48%,#650b2d 100%) !important;
+.custom-event-input:focus {
+  border-color: #c78a35 !important;
+  box-shadow: 0 0 0 3px rgba(199,138,53,.11) !important;
 }
-.hero-photo {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center right !important;
-  z-index: 0 !important;
-  opacity: .72 !important;
-}
-.hero::before {
-  content: "" !important;
-  position: absolute !important;
-  inset: 0 !important;
-  z-index: 1 !important;
-  background: linear-gradient(90deg,rgba(88,5,38,.97) 0%,rgba(104,7,43,.90) 42%,rgba(104,7,43,.56) 68%,rgba(65,4,27,.28) 100%) !important;
-  pointer-events: none !important;
-}
-.hero-content,.hero-message { position: relative !important; z-index: 2 !important; }
-.hero h1,.hero h1 span { color:#fffaf8 !important; }
-.hero p { color:#fff1f1 !important; }
-.hero-branch { color:#f4c96e !important; }
-.hero-message { color:#fff5f0 !important; }
-
-.login-image-panel {
-  position: relative !important;
-  overflow: hidden !important;
-  background: #5b0a2b !important;
-}
-.login-photo {
-  position:absolute !important;
-  inset:0 !important;
-  width:100% !important;
-  height:100% !important;
-  object-fit:cover !important;
-  object-position:center center !important;
-  display:block !important;
-  z-index:0 !important;
-}
-.login-image-overlay {
-  z-index:1 !important;
-  background:linear-gradient(180deg,rgba(72,5,31,.10),rgba(72,5,31,.30)) !important;
-}
-.login-image-copy { z-index:2 !important; }
-
-/* Availability selected date must remain dark/readable on the ivory page. */
-.availability-header h2,
-.availability-header > div h2 {
-  color:#4b1234 !important;
-  font-weight:700 !important;
-  opacity:1 !important;
-}
-.availability-header .section-label { color:#a86b16 !important; }
-.availability-instruction { color:#796773 !important; }
-
-@media (max-width:850px) {
-  .hero-photo { object-position:center right !important; opacity:.55 !important; }
+.custom-event-input.hidden {
+  display: none !important;
 }
