@@ -35,6 +35,51 @@
 
   <link rel="stylesheet" href="style.css?v=20261004-2">
 
+<style id="dream-town-input-visibility-fix">
+/* FINAL INPUT VISIBILITY FIX — keep typed text dark and visible */
+#login input,
+#signupPanel input,
+.login-card input[type="text"],
+.login-card input[type="email"],
+.login-card input[type="password"] {
+  color: #4a2634 !important;
+  -webkit-text-fill-color: #4a2634 !important;
+  caret-color: #b85f78 !important;
+  opacity: 1 !important;
+  background-color: #fffdfc !important;
+}
+#login input::placeholder,
+#signupPanel input::placeholder {
+  color: #9b7f89 !important;
+  -webkit-text-fill-color: #9b7f89 !important;
+  opacity: 1 !important;
+}
+#login input:focus,
+#signupPanel input:focus {
+  color: #4a2634 !important;
+  -webkit-text-fill-color: #4a2634 !important;
+}
+</style>
+<script>
+(function(){
+  function forceInputText(){
+    document.querySelectorAll('#login input, #signupPanel input').forEach(function(input){
+      input.style.setProperty('color','#4a2634','important');
+      input.style.setProperty('-webkit-text-fill-color','#4a2634','important');
+      input.style.setProperty('caret-color','#b85f78','important');
+      input.style.setProperty('opacity','1','important');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    forceInputText();
+    document.querySelectorAll('#login input, #signupPanel input').forEach(function(input){
+      input.addEventListener('input', forceInputText);
+      input.addEventListener('focus', forceInputText);
+      input.addEventListener('keyup', forceInputText);
+    });
+  });
+})();
+</script>
 </head>
 
 
