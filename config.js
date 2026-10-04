@@ -11,3 +11,4 @@ window.DTS_SUPABASE_URL =
 
 window.DTS_SUPABASE_PUBLISHABLE_KEY =
   "sb_publishable_Z7VunvSqPQkavExXL0L7mQ_BonfPNZf";
+
