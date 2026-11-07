@@ -690,9 +690,6 @@ async function loadBookings() {
       type:
         row.event_type,
 
-      customer:
-        row.customer_name || "",
-
       phone:
         row.phone || "",
 
@@ -704,6 +701,12 @@ async function loadBookings() {
 
       packageCost:
         row.package_cost ?? "",
+
+      advancePaid:
+        row.advance_paid ?? 0,
+
+      addons:
+        Array.isArray(row.addons) ? row.addons : [],
 
       status:
         row.status,
@@ -1045,11 +1048,6 @@ function renderUpcoming() {
               )}
             </b>
 
-            <div class="sub">
-              ${escapeHTML(
-                b.customer || "Customer not added"
-              )}
-            </div>
 
           </div>
 
@@ -1295,195 +1293,63 @@ $("next")
 ===================================================== */
 
 function renderBookings() {
-
-  const container =
-    $("allBookings");
-
-
-  const search =
-    (
-      $("filter")?.value ||
-      $("search")?.value ||
-      ""
-    )
-      .trim()
-      .toLowerCase();
-
-
-  let list =
-    [...bookings];
-
+  const container = $("allBookings");
+  const search = ($("filter")?.value || $("search")?.value || "").trim().toLowerCase();
+  let list = [...bookings];
 
   if (search) {
-
-    list =
-      list.filter(b => {
-
-        const searchable = [
-
-          b.type,
-          b.bookedBy,
-          b.customer,
-          b.phone,
-          b.date,
-          b.time,
-          b.endTime,
-          b.packageCost,
-          formatTime(b.time),
-          formatTime(b.endTime),
-          b.status
-
-        ]
-          .join(" ")
-          .toLowerCase();
-
-
-        return searchable.includes(
-          search
-        );
-
-      });
-
+    list = list.filter(b => {
+      const addonText = (b.addons || []).map(a => `${a.name} ${a.price}`).join(" ");
+      const searchable = [b.type, b.bookedBy, b.phone, b.date, b.time, b.endTime,
+        b.packageCost, b.advancePaid, b.status, addonText].join(" ").toLowerCase();
+      return searchable.includes(search);
+    });
   }
 
-
-  list.sort((a,b) => {
-
-    const aa =
-      `${a.date} ${a.time}`;
-
-    const bb =
-      `${b.date} ${b.time}`;
-
-    return bb.localeCompare(aa);
-
-  });
-
-
+  list.sort((a,b) => `${b.date} ${b.time}`.localeCompare(`${a.date} ${a.time}`));
   if (!list.length) {
-
-    container.innerHTML =
-      `<div class="empty">
-        No bookings found.
-      </div>`;
-
+    container.innerHTML = `<div class="empty">No bookings found.</div>`;
     return;
   }
 
+  const money = value => `₹${Number(value || 0).toLocaleString("en-IN", {maximumFractionDigits:2})}`;
+  container.innerHTML = list.map(b => {
+    const addonTotal = (b.addons || []).reduce((sum, item) => sum + Number(item.price || 0), 0);
+    const packageAmount = Number(b.packageCost || 0);
+    const total = packageAmount + addonTotal;
+    const advance = Number(b.advancePaid || 0);
+    const remaining = Math.max(0, total - advance);
+    const addonMarkup = (b.addons || []).length ? `
+      <div class="booking-addons-label">Selected add-ons:</div>
+      ${(b.addons || []).map(item => `<div class="booking-addon-line">${escapeHTML(item.name)} — ${money(item.price)}</div>`).join("")}
+    ` : "";
 
-  container.innerHTML =
-    list.map(b => {
-
-      return `
-
-        <div class="fullrow">
-
-          <div>
-
-            <strong>
-              ${escapeHTML(
-                formatDate(b.date)
-              )}
-            </strong>
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              ${escapeHTML(
-                b.type
-              )}
-            </strong>
-
-            <div class="sub">
-
-              ${escapeHTML(
-                b.customer ||
-                "No customer"
-              )}
-
-            </div>
-
-            ${b.packageCost !== "" && b.packageCost !== null && b.packageCost !== undefined ? `
-              <div class="package-cost-small">
-                ₹${Number(b.packageCost).toLocaleString("en-IN")}
-              </div>
-            ` : ""}
-
-          </div>
-
-
-          <div>
-
-            <strong>
-              ${escapeHTML(
-                b.bookedBy
-              )}
-            </strong>
-
-            <div class="sub">
-
-              ${escapeHTML(
-                b.phone ||
-                "No phone"
-              )}
-
-            </div>
-
-          </div>
-
-
-          <div>
-
-            ${escapeHTML(
-              formatTimeRange(
-                b.time,
-                b.endTime
-              )
-            )}
-
-          </div>
-
-
-          <div>
-
-            <span class="badge status-${String(b.status).toLowerCase()}">
-
-              ${escapeHTML(
-                b.status
-              )}
-
-            </span>
-
-          </div>
-
-
-          <div class="row-actions">
-
-            <button
-              class="mini"
-              onclick="editBooking('${b.id}')"
-            >
-              Edit
-            </button>
-
-            <button
-              class="mini danger"
-              onclick="deleteBooking('${b.id}')"
-            >
-              Delete
-            </button>
-
-          </div>
-
+    return `
+      <div class="fullrow">
+        <div><strong>${escapeHTML(formatDate(b.date))}</strong></div>
+        <div class="booking-payment-cell">
+          <strong>${escapeHTML(b.type)}</strong>
+          ${packageAmount ? `<div class="package-cost-small">Package: ${money(packageAmount)}</div>` : ""}
+          ${advance > 0 ? `<div class="advance-paid-line">Advance paid: ${money(advance)}</div>` : `<div class="booking-addon-line">Advance paid: —</div>`}
+          ${addonMarkup}
+          ${(packageAmount || addonTotal) ? `
+            <div class="booking-total-line">Total: ${money(total)}</div>
+            <div class="booking-remaining-line">Remaining to pay: ${money(remaining)}</div>
+          ` : ""}
         </div>
-
-      `;
-
-    }).join("");
-
+        <div>
+          <strong>${escapeHTML(b.bookedBy || "Staff")}</strong>
+          <div class="sub">${escapeHTML(b.phone || "No phone")}</div>
+        </div>
+        <div>${escapeHTML(b.time ? formatTimeRange(b.time,b.endTime) : "TBD")}</div>
+        <div><span class="badge status-${String(b.status).toLowerCase()}">${escapeHTML(b.status)}</span></div>
+        <div class="row-actions">
+          <button class="mini" onclick="editBooking('${b.id}')">Edit</button>
+          <button class="mini danger" onclick="deleteBooking('${b.id}')">Delete</button>
+        </div>
+      </div>
+    `;
+  }).join("");
 }
 
 
@@ -1553,12 +1419,15 @@ function openModal(
   $("type").value =
     "Anniversary Surprise";
 
-  $("customEventType").value = "";
-  updateCustomEventTypeUI();
-
   $("packageCost").value = "";
   $("customPackageCost").value = "";
+  $("advancePaid").value = "";
+  $("customAddonName").value = "";
+  $("customAddonPrice").value = "";
+  if ($("customAddonError")) $("customAddonError").textContent = "";
+  document.querySelectorAll(".addon-check, .cake-addon").forEach(el => el.checked = false);
   updatePackageCostUI();
+  updateBookingAmountPreview();
 
   $("bookedBy").value =
     staffProfile?.full_name ||
@@ -1622,33 +1491,6 @@ $("modal")
 
 
 /* =====================================================
-   CUSTOM EVENT TYPE
-===================================================== */
-
-function updateCustomEventTypeUI() {
-
-  const typeSelect = $("type");
-  const customInput = $("customEventType");
-
-  if (!typeSelect || !customInput) return;
-
-  const isCustom = typeSelect.value === "Custom Event";
-
-  customInput.classList.toggle("hidden", !isCustom);
-  customInput.required = isCustom;
-
-  if (!isCustom) {
-    customInput.value = "";
-  }
-}
-
-$("type")?.addEventListener(
-  "change",
-  updateCustomEventTypeUI
-);
-
-
-/* =====================================================
    PACKAGE COST
 ===================================================== */
 
@@ -1690,6 +1532,60 @@ $("packageCost")?.addEventListener(
 
 
 /* =====================================================
+   ADD-ONS AND PAYMENT TOTALS
+===================================================== */
+function collectSelectedAddons() {
+  const items = [];
+  document.querySelectorAll(".addon-check:checked, .cake-addon:checked").forEach(el => {
+    items.push({name: el.dataset.addonName, price: Number(el.dataset.addonPrice || 0)});
+  });
+  const customName = $("customAddonName")?.value.trim() || "";
+  const customPriceRaw = $("customAddonPrice")?.value.trim() || "";
+  if (customName && customPriceRaw !== "") {
+    items.push({name: customName, price: Number(customPriceRaw)});
+  }
+  return items;
+}
+
+// Validate custom add-on entry. Its name and amount are saved with the booking.
+const customAddonButton = $("addCustomAddonBtn");
+customAddonButton?.addEventListener("click", () => {
+  const name = $("customAddonName")?.value.trim() || "";
+  const priceText = $("customAddonPrice")?.value.trim() || "";
+  const message = $("customAddonError");
+  if (!name) {
+    if (message) message.textContent = "Enter the custom add-on name.";
+    $("customAddonName")?.focus();
+    return;
+  }
+  if (priceText === "" || !Number.isFinite(Number(priceText)) || Number(priceText) < 0) {
+    if (message) message.textContent = "Enter a valid amount (₹0 or more).";
+    $("customAddonPrice")?.focus();
+    return;
+  }
+  if (message) message.textContent = `${name} added at ₹${Number(priceText).toLocaleString("en-IN")} for this booking.`;
+  updateBookingAmountPreview();
+});
+
+function updateBookingAmountPreview() {
+  const packageAmount = Number(getSelectedPackageCost() || 0);
+  const addonAmount = collectSelectedAddons().reduce((sum, item) => sum + Number(item.price || 0), 0);
+  const advance = Number($("advancePaid")?.value || 0);
+  const total = packageAmount + addonAmount;
+  const remaining = Math.max(0, total - advance);
+  const money = n => `₹${Number(n).toLocaleString("en-IN", {maximumFractionDigits:2})}`;
+  const preview = $("bookingAmountPreview");
+  if (preview) preview.textContent = `Total: ${money(total)} · Advance: ${money(advance)} · Remaining: ${money(remaining)}`;
+}
+
+document.addEventListener("change", event => {
+  if (event.target.matches(".addon-check, .cake-addon, #packageCost")) updateBookingAmountPreview();
+});
+document.addEventListener("input", event => {
+  if (event.target.matches("#advancePaid, #customAddonName, #customAddonPrice, #customPackageCost")) updateBookingAmountPreview();
+});
+
+/* =====================================================
    SAVE BOOKING
 ===================================================== */
 
@@ -1707,33 +1603,24 @@ async function saveBooking(event) {
   const id = $("editId").value;
   const timeStatus = $("timeStatus").value;
 
-  const selectedEventType = $("type").value;
-  const customEventName = $("customEventType")?.value.trim() || "";
-
-  if (
-    selectedEventType === "Custom Event" &&
-    !customEventName
-  ) {
-    $("formError").textContent =
-      "Please type your custom event name.";
-    $("customEventType")?.focus();
+  const customAddonName = $("customAddonName")?.value.trim() || "";
+  const customAddonPrice = $("customAddonPrice")?.value.trim() || "";
+  if ((customAddonName && customAddonPrice === "") || (!customAddonName && customAddonPrice !== "")) {
+    $("formError").textContent = "Enter both the custom add-on name and its amount.";
     return;
   }
 
   const b = {
 
-    type:
-      selectedEventType === "Custom Event"
-        ? customEventName
-        : selectedEventType,
-
+    type: $("type").value,
     date: $("date").value,
     time: $("time").value,
     endTime: $("endTime").value,
     timeStatus,
     packageCost: getSelectedPackageCost(),
+    advancePaid: $("advancePaid").value.trim(),
+    addons: collectSelectedAddons(),
     bookedBy: $("bookedBy").value.trim(),
-    customer: $("customer").value.trim(),
     phone: $("phone").value.trim(),
     status: $("status").value,
     notes: $("notes").value.trim()
@@ -1765,8 +1652,8 @@ async function saveBooking(event) {
       endMinutes += 24 * 60;
     }
 
-    if (endMinutes - startMinutes < 30) {
-      $("formError").textContent = "Minimum booking duration is 30 minutes.";
+    if (endMinutes - startMinutes < 60) {
+      $("formError").textContent = "Minimum booking duration is 1 hour.";
       return;
     }
 
@@ -1811,8 +1698,10 @@ async function saveBooking(event) {
 
     event_type: b.type,
     package_cost: b.packageCost === "" ? null : Number(b.packageCost),
+    advance_paid: b.advancePaid === "" ? 0 : Number(b.advancePaid),
+    addons: b.addons,
     booked_by: b.bookedBy,
-    customer_name: b.customer || null,
+    customer_name: null,
     phone: b.phone || null,
     status: b.status,
     notes: b.notes || null
@@ -1871,29 +1760,9 @@ window.editBooking =
 
     $("modalTitle").textContent = "Edit Booking";
     $("editId").value = b.id;
-
-    const standardEventTypes = [
-      "Anniversary Surprise",
-      "Birthday Surprise",
-      "Bride to Be",
-      "Proposal Surprise",
-      "Romantic Setup",
-      "Welcome Surprise",
-      "Custom Event"
-    ];
-
-    if (standardEventTypes.includes(b.type)) {
-      $("type").value = b.type;
-      $("customEventType").value = "";
-    } else {
-      $("type").value = "Custom Event";
-      $("customEventType").value = b.type || "";
-    }
-
-    updateCustomEventTypeUI();
-
+    $("type").value = b.type;
     const savedPackageCost = String(b.packageCost ?? "");
-    const packageOptions = ["", "999", "1499", "1999"];
+    const packageOptions = ["", "799", "999", "1199", "1499", "1999"];
 
     if (packageOptions.includes(savedPackageCost)) {
       $("packageCost").value = savedPackageCost;
@@ -1914,10 +1783,20 @@ window.editBooking =
     $("time").value = b.time || "";
     $("endTime").value = b.endTime || "";
     $("bookedBy").value = b.bookedBy;
-    $("customer").value = b.customer;
+    $("advancePaid").value = b.advancePaid || "";
     $("phone").value = b.phone;
+    $("customAddonName").value = "";
+    $("customAddonPrice").value = "";
+    if ($("customAddonError")) $("customAddonError").textContent = "";
+    document.querySelectorAll(".addon-check, .cake-addon").forEach(el => el.checked = false);
+    (b.addons || []).forEach(item => {
+      const match = [...document.querySelectorAll(".addon-check, .cake-addon")].find(el => el.dataset.addonName === item.name && Number(el.dataset.addonPrice) === Number(item.price));
+      if (match) match.checked = true;
+      else if (item.name && item.name !== "Cake") { $("customAddonName").value = item.name; $("customAddonPrice").value = item.price; }
+    });
     $("notes").value = b.notes;
     $("formError").textContent = "";
+    updateBookingAmountPreview();
 
     initializeBookingTimePicker();
     setBookingTimePicker("Start", b.time || null);
@@ -2417,7 +2296,7 @@ function renderAvailabilitySlots() {
         currentMinutes += 24 * 60;
       }
 
-      if (currentMinutes < startMinutes + 30) {
+      if (currentMinutes < startMinutes + 60) {
         disabled = true;
       }
 
@@ -2603,11 +2482,11 @@ function checkAvailabilityFromPicker() {
     endMinutes += 24 * 60;
   }
 
-  if (endMinutes - startMinutes < 30) {
+  if (endMinutes - startMinutes < 60) {
 
     if (result) {
       result.className = "availability-status unavailable";
-      result.textContent = "Minimum booking duration is 30 minutes.";
+      result.textContent = "Minimum booking duration is 1 hour.";
     }
 
     return;
@@ -2667,8 +2546,8 @@ window.selectAvailabilityTime = function(time) {
     end += 24 * 60;
   }
 
-  if (end - start < 30) {
-    alert("Minimum booking duration is 30 minutes.");
+  if (end - start < 60) {
+    alert("Minimum booking duration is 1 hour.");
     return;
   }
 
@@ -3427,4 +3306,3 @@ $("menu")
 
 initializeBookingTimePicker();
 initializeAuth();
-
