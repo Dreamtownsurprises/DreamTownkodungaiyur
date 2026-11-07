@@ -255,12 +255,12 @@
 
     </div>
 
-    <div class="login-image-panel" aria-hidden="true">
-      <div class="login-image-overlay"></div>
-      <div class="login-image-copy">
-        <span>Dream Town Surprises</span>
-        <strong>Good Things<br>Happen Here</strong>
-        <small>— Kodungaiyur —</small>
+    <div class="login-visual">
+      <img src="login.png" alt="Dream Town Surprises Kodungaiyur">
+      <div class="login-visual-copy">
+        <span>DREAM TOWN SURPRISES</span>
+        <strong>Where Every Surprise<br>Becomes a Story</strong>
+        <small>— KODUNGAIYUR —</small>
       </div>
     </div>
 
@@ -381,6 +381,24 @@
 
     </nav>
 
+
+    <div class="sidebar-location">
+
+      <a
+        href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        Open Event Location
+
+      </a>
+
+    </div>
+
+
     <div class="sidebar-quote">
 
       <span>
@@ -443,6 +461,21 @@
         >
 
       </div>
+
+
+      <a
+        class="top-location"
+        href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        Location
+
+      </a>
+
 
       <div class="profile">
 
@@ -717,7 +750,42 @@
             ></div>
 
           </div>
-<button
+
+
+
+          <!-- MAP -->
+
+          <a
+            href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="map-card"
+          >
+
+            <div class="map-icon">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Event Location
+              </strong>
+
+              <span>
+                Open in Google Maps →
+              </span>
+
+            </div>
+
+          </a>
+
+
+
+          <button
             class="create-big"
             data-add="booking"
           >
@@ -915,7 +983,7 @@
         <input
           id="filter"
           type="search"
-          placeholder="Search customer, phone number, booked by, date..."
+          placeholder="Search event, phone number, booked by, date, package..."
         >
 
       </div>
@@ -928,7 +996,7 @@
           <span>Date</span>
 
           <span>
-            Event / Customer
+            Event / Payment
           </span>
 
           <span>
@@ -1264,15 +1332,6 @@
 
           </select>
 
-          <input
-            id="customEventType"
-            class="custom-event-type hidden"
-            type="text"
-            maxlength="80"
-            placeholder="Type your custom event name"
-            autocomplete="off"
-          >
-
         </div>
 
 
@@ -1290,17 +1349,11 @@
               Select package
             </option>
 
-            <option value="999">
-              ₹999
-            </option>
-
-            <option value="1499">
-              ₹1499
-            </option>
-
-            <option value="1999">
-              ₹1999
-            </option>
+            <option value="799">₹799</option>
+            <option value="999">₹999</option>
+            <option value="1199">₹1199</option>
+            <option value="1499">₹1499</option>
+            <option value="1999">₹1999</option>
 
             <option value="custom">
               Custom Package
@@ -1454,32 +1507,62 @@
 
 
         <div class="field">
+          <label>Advance Paid (₹) <span class="optional-tag">OPTIONAL</span></label>
+          <input id="advancePaid" type="number" min="0" step="0.01" inputmode="decimal" placeholder="Enter advance amount (if paid)">
+        </div>
 
-          <label>
-            Customer Name
-          </label>
-
-          <input
-            id="customer"
-            type="text"
-            placeholder="Customer name"
-          >
-
+        <div class="field">
+          <label>Phone Number</label>
+          <input id="phone" type="tel" placeholder="Customer phone number">
         </div>
 
 
-        <div class="field">
-
-          <label>
-            Phone Number
-          </label>
-
-          <input
-            id="phone"
-            type="tel"
-            placeholder="Customer phone number"
-          >
-
+        <div class="field full addons-section">
+          <div class="addons-heading">Extras &amp; Add-ons <span class="optional-tag">OPTIONAL</span></div>
+          <p class="addons-help">Select extras for this booking. Selected items and prices will appear in Bookings.</p>
+          <div class="addons-group">
+            <h4>♥ ADD-ONS ♥</h4>
+            <div class="addons-grid">
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Sash, Crown, Firecane" data-addon-price="250"><span>Sash, Crown, Firecane <b>₹250</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Extra Member (per person)" data-addon-price="249"><span>Extra Member (per person) <b>₹249/person</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Videoshoot" data-addon-price="299"><span>Videoshoot <b>₹299</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Photography" data-addon-price="299"><span>Photography <b>₹299</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Fog Entry" data-addon-price="599"><span>Fog Entry <b>₹599</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Polaroid Photos × 6" data-addon-price="100"><span>Polaroid Photos × 6 <b>₹100</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Polaroid Photos × 18" data-addon-price="299"><span>Polaroid Photos × 18 <b>₹299</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Bouquet — Medium" data-addon-price="499"><span>Bouquet — Medium <b>₹499</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Bouquet — Large" data-addon-price="699"><span>Bouquet — Large <b>₹699</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Photo Frame — Small (6×8)" data-addon-price="299"><span>Photo Frame — Small (6×8) <b>₹299</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Photo Frame — Medium (12×8)" data-addon-price="499"><span>Photo Frame — Medium (12×8) <b>₹499</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Additional 1 Hour" data-addon-price="499"><span>Additional 1 Hour <b>₹499</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Video Editing — 1 min Reel" data-addon-price="349"><span>Video Editing — 1 min Reel <b>₹349</b></span></label>
+            </div>
+            <h4 class="cake-heading">♥ COMBOS ♥</h4>
+            <div class="addons-grid combo-grid">
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Combo: Sash, Crown, Firecane" data-addon-price="299"><span>Sash, Crown, Firecane <b>₹299</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Combo of 3 + Photoshoot" data-addon-price="499"><span>Combo of 3 + Photoshoot <b>₹499</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Videoshoot + Photoshoot" data-addon-price="499"><span>Videoshoot + Photoshoot <b>₹499</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Combo of 3 + Fog Entry" data-addon-price="599"><span>Combo of 3 + Fog Entry <b>₹599</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Combo of 3 + Polaroid Photos × 18" data-addon-price="699"><span>Combo of 3 + Polaroid Photos × 18 <b>₹699</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Combo of 3 + Bouquet" data-addon-price="799"><span>Combo of 3 + Bouquet <b>₹799</b></span></label>
+              <label class="addon-option"><input type="checkbox" class="addon-check" data-addon-name="Bouquet + Fog Entry" data-addon-price="899"><span>Bouquet + Fog Entry <b>₹899</b></span></label>
+            </div>
+            <h4 class="cake-heading">CAKE — SELECT ONE</h4>
+            <div class="addons-grid cake-grid">
+              <label class="addon-option"><input type="radio" name="cakeAddon" class="cake-addon" data-addon-name="Cake" data-addon-price="50"><span>Cake <b>₹50</b></span></label>
+              <label class="addon-option"><input type="radio" name="cakeAddon" class="cake-addon" data-addon-name="Cake" data-addon-price="100"><span>Cake <b>₹100</b></span></label>
+              <label class="addon-option"><input type="radio" name="cakeAddon" class="cake-addon" data-addon-name="Cake" data-addon-price="200"><span>Cake <b>₹200</b></span></label>
+            </div>
+            <h4 class="cake-heading">♥ CUSTOM ADD-ON ♥</h4>
+            <p class="addons-help">Add any extra item with your own name and price.</p>
+            <div class="custom-addon-row">
+              <input id="customAddonName" type="text" maxlength="80" placeholder="Custom add-on name">
+              <input id="customAddonPrice" type="number" min="0" step="0.01" placeholder="Amount (₹)">
+            </div>
+            <button type="button" id="addCustomAddonBtn" class="secondary-btn custom-addon-add-btn">Add custom add-on</button>
+            <p id="customAddonError" class="custom-addon-error" aria-live="polite"></p>
+          </div>
+          <div id="bookingAmountPreview" class="booking-amount-preview">Package + add-ons: ₹0 · Advance: ₹0 · Remaining: ₹0</div>
         </div>
 
 
@@ -1496,7 +1579,43 @@
           ></textarea>
 
         </div>
-</div>
+
+
+        <!-- GOOGLE MAP -->
+
+        <div class="field full">
+
+          <a
+            href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="booking-map"
+          >
+
+            <div class="booking-map-icon">
+
+              <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+
+            <div>
+
+              <strong>
+                Dream Town Event Location
+              </strong>
+
+              <span>
+                Open location in Google Maps →
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
 
 
       <p
