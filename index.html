@@ -379,24 +379,12 @@
 
       </button>
 
+      <button data-page="staff" id="staffNav" class="owner-only hidden">
+        <i class="fa-solid fa-user-shield"></i>
+        <span>Staff / Users</span>
+      </button>
+
     </nav>
-
-
-    <div class="sidebar-location">
-
-      <a
-        href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        Open Event Location
-
-      </a>
-
-    </div>
 
 
     <div class="sidebar-quote">
@@ -461,20 +449,6 @@
         >
 
       </div>
-
-
-      <a
-        class="top-location"
-        href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-
-        <i class="fa-solid fa-location-dot"></i>
-
-        Location
-
-      </a>
 
 
       <div class="profile">
@@ -750,38 +724,6 @@
             ></div>
 
           </div>
-
-
-
-          <!-- MAP -->
-
-          <a
-            href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="map-card"
-          >
-
-            <div class="map-icon">
-
-              <i class="fa-solid fa-location-dot"></i>
-
-            </div>
-
-
-            <div>
-
-              <strong>
-                Event Location
-              </strong>
-
-              <span>
-                Open in Google Maps →
-              </span>
-
-            </div>
-
-          </a>
 
 
 
@@ -1236,6 +1178,37 @@
 
     </section>
 
+    <!-- OWNER-ONLY STAFF APPROVAL -->
+    <section id="staff" class="page hidden owner-only-page">
+      <div class="page-header">
+        <div>
+          <span class="section-label">ACCOUNT MANAGEMENT</span>
+          <h1>Staff / Users</h1>
+          <p>Review new account requests and manage staff access.</p>
+        </div>
+        <button class="create" type="button" onclick="loadStaffUsers()">
+          <i class="fa-solid fa-rotate"></i> Refresh
+        </button>
+      </div>
+      <div class="staff-grid">
+        <div class="staff-panel card">
+          <div class="section-heading">
+            <h3>Pending Approval</h3>
+            <span id="pendingStaffCount" class="staff-count">0</span>
+          </div>
+          <div id="pendingStaffList"><div class="staff-empty">Loading requests...</div></div>
+        </div>
+        <div class="staff-panel card">
+          <div class="section-heading">
+            <h3>Approved / Disabled</h3>
+            <span id="approvedStaffCount" class="staff-count">0</span>
+          </div>
+          <div id="approvedStaffList"><div class="staff-empty">Loading staff...</div></div>
+        </div>
+      </div>
+      <p id="staffMessage" class="staff-message" aria-live="polite"></p>
+    </section>
+
   </main>
 
 </section>
@@ -1580,40 +1553,6 @@
 
         </div>
 
-
-        <!-- GOOGLE MAP -->
-
-        <div class="field full">
-
-          <a
-            href="https://maps.app.goo.gl/jqkK89DXL6SXFtKn7"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="booking-map"
-          >
-
-            <div class="booking-map-icon">
-
-              <i class="fa-solid fa-location-dot"></i>
-
-            </div>
-
-
-            <div>
-
-              <strong>
-                Dream Town Event Location
-              </strong>
-
-              <span>
-                Open location in Google Maps →
-              </span>
-
-            </div>
-
-          </a>
-
-        </div>
 
       </div>
 
