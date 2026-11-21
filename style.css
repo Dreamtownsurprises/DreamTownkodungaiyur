@@ -3731,3 +3731,24 @@ nav button.active{background:linear-gradient(135deg,#c01650,#980b3a)!important;c
 .combo-grid{margin-bottom:16px}
 .custom-addon-add-btn{margin-top:10px;min-height:42px}
 .custom-addon-error{margin:8px 0 0;color:#d99a50;font-size:13px;min-height:18px}
+
+
+/* KODUNGAIYUR MOBILE BOOKINGS SCROLL + STAFF APPROVAL + LOCATION REMOVAL */
+.sidebar-location,.top-location,.map-card,.booking-map{display:none!important}
+.booking-table{width:100%!important;max-width:100%!important;overflow-x:auto!important;overflow-y:hidden!important;-webkit-overflow-scrolling:touch!important;overscroll-behavior-x:contain;touch-action:pan-x pan-y;scrollbar-width:thin;scrollbar-color:#b5124b #f5e7eb}
+.booking-table-head,.booking-table .fullrow{min-width:900px!important;width:900px!important}
+.booking-table::-webkit-scrollbar{height:8px}
+.booking-table::-webkit-scrollbar-track{background:#f5e7eb;border-radius:20px}
+.booking-table::-webkit-scrollbar-thumb{background:#b5124b;border-radius:20px}
+@media(max-width:760px){
+  html,body,.app-shell,main{max-width:100%!important;overflow-x:hidden!important}
+  .page{min-width:0!important;width:100%!important;overflow-x:hidden!important;padding-left:14px!important;padding-right:14px!important}
+  .booking-table{display:block!important;margin-right:0!important;cursor:grab!important}
+  .booking-table:active{cursor:grabbing!important}
+  .booking-table-head,.booking-table .fullrow{min-width:900px!important;width:900px!important;grid-template-columns:120px 1.4fr 1.2fr 145px 100px 130px!important}
+  .staff-grid{grid-template-columns:1fr!important}
+  .staff-user{align-items:flex-start!important;flex-direction:column!important}
+  .staff-actions{width:100%!important}
+  .staff-action{flex:1!important}
+}
+.staff-status.pending{color:#9b650d;background:#fff0c9;border:1px solid #f0d69a}
