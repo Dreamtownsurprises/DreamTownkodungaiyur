@@ -3752,3 +3752,34 @@ nav button.active{background:linear-gradient(135deg,#c01650,#980b3a)!important;c
   .staff-action{flex:1!important}
 }
 .staff-status.pending{color:#9b650d;background:#fff0c9;border:1px solid #f0d69a}
+
+/* DESKTOP BOOKINGS TABLE WIDTH FIX */
+@media (min-width: 761px) {
+    .booking-table {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .booking-table-head,
+    .booking-table .fullrow {
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        grid-template-columns: 120px minmax(220px, 1.5fr) minmax(180px, 1.2fr) 145px 110px 145px !important;
+    }
+}
+
+/* KEEP HORIZONTAL SCROLLING ON MOBILE */
+@media (max-width: 760px) {
+    .booking-table {
+        width: 100% !important;
+        overflow-x: auto !important;
+    }
+
+    .booking-table-head,
+    .booking-table .fullrow {
+        width: 900px !important;
+        min-width: 900px !important;
+    }
+}
